@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="Br-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Envelope + Letter (Open/Close on Click)</title>
+    <link rel="stylesheet" href="evelope.css">
+</head>
+<body>
+    <div class="container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong>1 ano 5 meses .</strong>
+                        <p>
+                            Princesa,te amo muito. Você é a pessoa mais especial para mim,
+                            e espero cuidar bem de você e proporcionar uma vida digna para nós. 
+                            Desejo te fazer feliz em cada momento, mesmo nos dias mais  ........tristes. 
+                            Estou com saudades .     bjo ................ ﾠﾠﾠﾠﾠﾠte amo 
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div>
+            <div class="photos">
+                <img src="imagem 1.jpeg" class="photo" alt="Photo 1">
+                <img src="imagem 2.jpeg" class="photo" alt="Photo 2">
+                <img src="imagem 3.jpeg" class="photo" alt="Photo 3">
+                <img src="imagem 4.jpeg" class="photo" alt="Photo 4">
+            </div>
+        </div>
+    </div>
+    <script>
+        const envelope = document.querySelector('.envelope-wrapper');
+        const photos = document.querySelectorAll('.photo');
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap');
+            photos.forEach((photo, index) => {
+                // Delay each photo's animation slightly
+                setTimeout(() => {
+                    photo.classList.toggle('show');
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
